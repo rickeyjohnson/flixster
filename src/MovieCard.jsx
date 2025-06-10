@@ -1,17 +1,13 @@
 import './MovieCard.css'
 
-const MovieCard = ({imageUrl="https://critics.io/img/movies/poster-placeholder.png", title="Movie Title", voteAverage="5"}) => {
+const MovieCard = ({ image_url, title, vote_average }) => {
     return (
-        <div className="movie-card">
-            <header>
-                <img src={imageUrl} alt={title + "'s Poster Image"} />
-            </header>
-            <main>
-                <h1>{title}</h1>
-                <p>Rating: {voteAverage}</p>
-            </main>
+        <div className='movie-card'>
+            <img src={`https://image.tmdb.org/t/p/w500${image_url}`} alt='poster' />
+            <h1>{title}</h1>
+            <h3>Vote Average: {vote_average}</h3>
         </div>
     )
-} 
+}
 
 export default MovieCard

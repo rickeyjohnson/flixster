@@ -2,6 +2,10 @@
     border: 3px solid black;
     border-radius: 20px;
     padding: 10px;
-    height: 300px;
+    height: auto;
+    width: 200px;
+}
+
+.movie-card img {
     width: 200px;
 }

@@ -4,10 +4,10 @@ import MovieList from './MovieList'
 
 const App = () => {
   return (
-    <div className="App">
-      <h1>Movies!</h1>
-      <MovieList />
-    </div>
+      <div className="App">
+          <h1>Movies!</h1>
+          <MovieList />
+      </div>
   )
 }
 

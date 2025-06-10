@@ -3,3 +3,7 @@
     flex-wrap: wrap;
     gap: 20px;
 }
+
+.disabled {
+    background-color: red;
+}
