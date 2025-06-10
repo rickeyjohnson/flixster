@@ -9,12 +9,12 @@ const MovieList = () => {
     console.log(movies)
 
     return (
-        <div class="movie-list">
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
+        <div className="movie-list">
+            {
+                movies.map((movie) => {
+                    return <MovieCard id={movie.id} imageUrl={movie.image_url} title={movie.title} voteAverage={movie.vote_average} />
+                })
+            }
         </div>
     )
 }

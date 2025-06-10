@@ -7,7 +7,7 @@ function parseMovieData(data) {
                 "id": movie.id,
                 "backdrop_path": movie.backdrop_path,
                 "title": movie.title,
-                "poster_path": movie.poster_path,
+                "image_url": movie.poster_path,
                 "release_date": movie.release_date,
                 "overview": movie.overview,
                 "vote_average": movie.vote_average
