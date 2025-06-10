@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { parseMovieData } from "./utils/utils"
 import MovieCard from "./MovieCard"
 import './MovieList.css'
+import Modal from "./Modal"
 
 const MovieList = ({ search }) => {
 
@@ -60,7 +61,7 @@ const MovieList = ({ search }) => {
             <>
             {
                 movies.map(movie => {
-                    return <MovieCard image_url={movie.image_url} title={movie.title} vote_average={movie.vote_average} /> 
+                    return <MovieCard movie={movie} /> 
                 })
             }
             </>
@@ -77,9 +78,9 @@ const MovieList = ({ search }) => {
         setShowSearch(true)
     }
 
-    // const handleNowPlaying = () => {
-        
-    // }
+    const handleNowPlaying = () => {
+        setShowSearch(false)
+    }
 
     return (
         <>
