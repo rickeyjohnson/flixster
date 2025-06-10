@@ -11,13 +11,13 @@ const MovieCard = ({ movie }) => {
 
     return (
         <>
-            <div onClick={() => {setOpenModal(true)}}className='movie-card'>
+            <div onClick={() => setOpenModal(true)}className='movie-card'>
                 <img src={`https://image.tmdb.org/t/p/w500${movie.image_url}`} alt='poster' />
                 <h1>{movie.title}</h1>
                 <h3>Vote Average: {movie.vote_average}</h3>
                 {/* <p>{movie.genres}</p> */}
             </div>
-            {openModal && <Modal onClick={() => console.log('yo')} movie={movie}/>}
+            {openModal && <Modal onClick={() => setOpenModal(false)} movie={movie}/>}
         </>
     )
 }

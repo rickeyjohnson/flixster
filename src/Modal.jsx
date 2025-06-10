@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import './Modal.css'
 
-const Modal = ({ movie }) => {
+const Modal = ({ movie, onClick }) => {
     const [genres, setGenres] = useState([])
 
     const fetchGenreName = async (genre_ids) => {
@@ -50,6 +50,7 @@ const Modal = ({ movie }) => {
                         })
                     }
                 </p>
+                <button onClick={onClick}>close</button>
             </div>
         </div>
     )
