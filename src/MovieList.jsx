@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
-import { parseMovieData } from "./utils/utils"
+import { parseMovieData, sortMovies } from "./utils/utils"
 import MovieCard from "./MovieCard"
 import './MovieList.css'
 import Modal from "./Modal"
 
 const MovieList = ({ search }) => {
 
+    const [sort, setSort] = useState('')
     const [nowPlayingMovies, setNowPlayingMovies] = useState([])
     const [searchMovies, setSearchMovies] = useState([])
     const [nowPlayingPage, setNowPlayingPage] = useState(1)
@@ -60,7 +61,7 @@ const MovieList = ({ search }) => {
         return (
             <>
             {
-                movies.map(movie => {
+                movies.map((movie) => {
                     return <MovieCard movie={movie} /> 
                 })
             }
@@ -76,10 +77,22 @@ const MovieList = ({ search }) => {
         if (!searchQuery) { return }
         fetchSearchMovies(searchQuery)
         setShowSearch(true)
+        setIsDisabled(true)
+        setSort('')
     }
 
     const handleNowPlaying = () => {
+        setNowPlayingPage(1)
+        setNowPlayingMovies([])
+        fetchNowPlaying(1)
         setShowSearch(false)
+        setIsDisabled(false)
+        setSort('')
+    }
+
+    const handleSort = (event) => {
+        console.log(event.target.value)
+        setSort(event.target.value)
     }
 
     return (
@@ -88,9 +101,19 @@ const MovieList = ({ search }) => {
             <button onClick={handleSearch}>search</button>
             <button onClick={handleNowPlaying}>now playing</button>
 
+            <select onChange={handleSort} defaultValue={""}>
+                <option value="label">--Sort--</option>
+                <option value="A-Z">A-Z</option>
+                <option value="Z-A">Z-A</option>
+                <option value="recent">recent - oldest</option>
+                <option value="oldest">oldest - recent</option>
+                <option value="most-votes">most votes - least vote</option>
+                <option value="least-votes">least vote - most votes</option>
+            </select>
+
             <div className='movie-list'>
                 {
-                    showSearch ? renderMovies(searchMovies) : renderMovies(nowPlayingMovies)
+                    showSearch ? renderMovies(sortMovies(searchMovies, sort)) : renderMovies(sortMovies(nowPlayingMovies, sort))
                 }
                 <button onClick={loadMoreMovies} disabled={isDisabled}>load more</button>
             </div>
