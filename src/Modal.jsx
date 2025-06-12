@@ -47,7 +47,7 @@ const Modal = ({ movie, onClick }) => {
     return (
         <div className="modal-overlay">
             <div className="modal-content" >
-                <span onClick={onClick} class="close-btn material-symbols-outlined">close</span>
+                <span onClick={onClick} className="close-btn material-symbols-outlined">close</span>
                 <h2>{movie.title}</h2>
 
                 <div className="images">

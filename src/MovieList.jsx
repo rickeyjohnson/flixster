@@ -3,8 +3,9 @@ import { parseMovieData, sortMovies } from "./utils/utils"
 import MovieCard from "./MovieCard"
 import './MovieList.css'
 import Modal from "./Modal"
+import Sidebar from "./Sidebar"
 
-const MovieList = ({ search }) => {
+const MovieList = ({ color }) => {
 
     const [sort, setSort] = useState('')
     const [nowPlayingMovies, setNowPlayingMovies] = useState([])
@@ -14,6 +15,9 @@ const MovieList = ({ search }) => {
     const [isDisabled, setIsDisabled] = useState(false)
     const [searchQuery, setSearchQuery] = useState('')
     const [showSearch, setShowSearch] = useState(false)
+    const [favorites, setFavorites] = useState([])
+    const [watched, setWatched] = useState([])
+    const [showSidebar, setShowSidebar] = useState(false)
 
     useEffect(() => {
         fetchNowPlaying(nowPlayingPage)
@@ -62,7 +66,15 @@ const MovieList = ({ search }) => {
             <>
             {
                 movies.map((movie) => {
-                    return <MovieCard movie={movie} /> 
+                    return (
+                        <MovieCard 
+                            movie={movie} 
+                            onFavoritesClick={() => handleAddToFavorites(movie)} 
+                            onWatchedClick={() => onWatchedClick(movie)} 
+                            isFavorited={isFavorite(movie)} 
+                            wasWatched={wasWatched(movie)}
+                        />
+                    )
                 })
             }
             </>
@@ -95,9 +107,33 @@ const MovieList = ({ search }) => {
         setSort(event.target.value)
     }
 
+    const handleAddToFavorites = (movie) => {
+        const exist = isFavorite(movie)
+
+        if (exist) {
+            setFavorites(favorites.filter(fav => fav.id !== movie.id))
+        } else {
+            setFavorites([...favorites, movie])
+        }
+    }
+
+    const onWatchedClick = (movie) => {
+        const exist = wasWatched(movie)
+
+        if (exist) {
+            setWatched(watched.filter(watch => watch.id !== movie.id))
+        } else {
+            setWatched([...watched, movie])
+        }
+    }
+
+    const isFavorite = (movie) => favorites.some((fav) => fav.id === movie.id)
+    const wasWatched = (movie) => watched.some((watch) => watch.id === movie.id)
+
     return (
         <main>
-            <header>
+            <nav>
+                <div onClick={() => setShowSidebar(!showSidebar)} className="sidebar-toggle">=</div>
                 <div className="search">
                     <input type='text' placeholder='Search' value={searchQuery} onChange={handleSearchChange}/>
                     <button className="search-btn" onClick={handleSearch}>search</button>
@@ -115,13 +151,15 @@ const MovieList = ({ search }) => {
                         <option value="least-votes">least vote - most votes</option>
                     </select>
                 </div>
-            </header>
+            </nav>
 
-            <div className='movie-list'>
-                {
-                    showSearch ? renderMovies(sortMovies(searchMovies, sort)) : renderMovies(sortMovies(nowPlayingMovies, sort))
-                }
-            </div>
+            <section>
+                {showSidebar && <Sidebar color={color} favorites={favorites} watched={watched}/>}
+                <div className={`movie-list ${showSidebar ? 'sidebar-displayed' : ''}`}>
+                    { showSearch ? renderMovies(sortMovies(searchMovies, sort)) : renderMovies(sortMovies(nowPlayingMovies, sort)) }
+                </div>
+            </section>
+
             <div className="load-more-container">
                 <button className="load-more-btn" onClick={loadMoreMovies} disabled={isDisabled}>load more</button>
             </div>

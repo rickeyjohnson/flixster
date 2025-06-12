@@ -1,15 +1,15 @@
 import logo from './assets/logo-placeholder-image.png'
 import { getRandomColor } from './utils/utils'
 
-const Header = () => {
+const Header = ({color}) => {
     const style = {
-        'background' : `linear-gradient(to bottom, ${getRandomColor()}, black)`
+        'background' : `linear-gradient(to bottom, ${color}, black)`
     }
 
     return (
-        <div className="header" style={style}>
+        <header style={style}>
             <p>Flixster</p>
-        </div>
+        </header>
     )
 }
 

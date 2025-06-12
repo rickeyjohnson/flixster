@@ -4,6 +4,7 @@
     border: 2px solid rgb(65, 65, 65);
     border-radius: 1rem;
     box-sizing: border-box;
+    position: relative;
 
     img {
         width: 100%;
@@ -25,4 +26,32 @@
     font-size: clamp(10px, 20px);
     padding-left: 0.75rem;
     color: white;
+}
+/* Star CSS  */
+
+.star {
+  color: white;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: rgba(0, 0, 0, 0.408);
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.favorited {
+  background-color: red;
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
 }

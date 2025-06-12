@@ -11,7 +11,8 @@ function parseMovieData(data) {
                 "release_date": movie.release_date,
                 "overview": movie.overview,
                 "vote_average": movie.vote_average,
-                "genre_ids": movie.genre_ids
+                "genre_ids": movie.genre_ids,
+                "favorite": false
             }
         )
     })

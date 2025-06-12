@@ -1,7 +1,6 @@
-header {
-    margin-bottom: 100px;
+nav {
     display: flex;
-    margin: 30px;
+    margin: 30px 4vw;
 
     input {
         box-sizing: border-box;
@@ -21,6 +20,11 @@ header {
     }
 }
 
+section {
+    display: grid;
+    grid-template-columns: 1.25fr 5fr;
+}
+
 .movie-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, 20rem);
@@ -29,6 +33,11 @@ header {
     justify-content: center;
     align-items: center;
     height: 100%;
+    grid-column: 1 / span 2;
+}
+
+.sidebar-displayed {
+    grid-column: 2 / span 1;
 }
 
 .disabled {
@@ -65,4 +74,38 @@ header {
     margin: 3rem 0;
     display: flex;
     justify-content: center;
+}
+
+/* Star CSS  */
+
+.star {
+  color: white;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: rgba(0, 0, 0, 0.408);
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.favorited {
+  background-color: red;
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.sidebar-toggle {
+    color: white;
+    font-size: 4rem;
 }

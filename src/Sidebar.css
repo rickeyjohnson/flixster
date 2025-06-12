@@ -1,0 +1,29 @@
+.sidebar {
+    margin-left: 2rem;
+}
+
+.sidebar-content {
+    padding: 2rem;
+    margin: 0;
+    width: 100%;
+    border-radius: 1rem;
+    color: white;
+    justify-self: center;
+
+    p {
+        color: white;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+        text-decoration: underline;
+    }
+
+    li {
+        margin-bottom: 1rem;
+    }
+}
