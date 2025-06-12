@@ -61,3 +61,10 @@
     }
 }
 
+.trailers {
+    margin-top: 1rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    overflow: scroll;
+}
