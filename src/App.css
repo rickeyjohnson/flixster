@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+  font-family: 'Space Mono', monospace;
 }
 
 .App-header {
@@ -10,6 +16,16 @@
   justify-content: space-evenly;
   color: white;
   padding: 20px;
+}
+
+.footer {
+  text-align: center;
+  height: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border-top: 2px solid #282c34; */
+  box-shadow: 0px -4px 3px rgba(50, 50, 50, 0.75);
 }
 
 @media (max-width: 600px) {

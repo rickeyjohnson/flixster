@@ -4,18 +4,32 @@ import './MovieCard.css'
 
 const MovieCard = ({ movie }) => {
     const [openModal, setOpenModal] = useState(false)
-
-    const handleModalClick = (event) => {
-        console.log('hi')
+    const [isHovered, setIsHovered] = useState(false)
+    const handleMouseOver = () => {
+        setIsHovered(true)
+    }
+    const handleMouseOut = () => {
+        setIsHovered(false)
     }
 
     return (
         <>
-            <div onClick={() => setOpenModal(true)}className='movie-card'>
-                <img src={`https://image.tmdb.org/t/p/w500${movie.image_url}`} alt='poster' />
-                <h1>{movie.title}</h1>
-                <h3>Vote Average: {movie.vote_average}</h3>
-                {/* <p>{movie.genres}</p> */}
+            <div 
+            onClick={() => setOpenModal(true)}
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+            className='movie-card'>
+                <img
+                    className="movie-poster"
+                    src={isHovered ? 'https://media.tenor.com/5KF3BqrpKs8AAAAM/eating-popcorn-watching-a-movie.gif' : `https://image.tmdb.org/t/p/w500${movie.image_url}`}
+                    alt="poster"
+                />
+
+                <div className='movie-info'>
+                    <h1 className='movie-title'>{movie.title}</h1>
+                    <h3 className='vote-average'>Vote Average: {movie.vote_average}</h3>
+                </div>
+                
             </div>
             {openModal && <Modal onClick={() => setOpenModal(false)} movie={movie}/>}
         </>

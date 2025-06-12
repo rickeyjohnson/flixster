@@ -1,9 +1,67 @@
-.movie-list {
+header {
+    margin-bottom: 100px;
     display: flex;
+    margin: 30px;
+
+    input {
+        box-sizing: border-box;
+        width: 20rem;
+        padding-left: 1.5rem;
+        border-radius: 0;
+        border: 2px solid #23262d;
+        font-family: 'Space Mono', monospace;
+    }
+
+    button {
+        font-family: 'Space Mono', monospace;
+    }
+
+    select {
+        font-family: 'Space Mono', monospace;
+    }
+}
+
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 20rem);
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 .disabled {
     background-color: red;
+}
+
+.search-btn {
+    border: none;
+    padding: 1rem;
+}
+
+.now-playing-btn {
+    margin-left: 2rem;
+}
+
+.sort-selector {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search { 
+    display: flex;
+}
+
+.load-more-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-family: 'Space Mono', monospace;
+}
+
+.load-more-container {
+    margin: 3rem 0;
+    display: flex;
+    justify-content: center;
 }

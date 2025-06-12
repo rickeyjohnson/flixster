@@ -96,28 +96,36 @@ const MovieList = ({ search }) => {
     }
 
     return (
-        <>
-            <input type='text' placeholder='Search' value={searchQuery} onChange={handleSearchChange}/>
-            <button onClick={handleSearch}>search</button>
-            <button onClick={handleNowPlaying}>now playing</button>
+        <main>
+            <header>
+                <div className="search">
+                    <input type='text' placeholder='Search' value={searchQuery} onChange={handleSearchChange}/>
+                    <button className="search-btn" onClick={handleSearch}>search</button>
+                    <button className="now-playing-btn" onClick={handleNowPlaying}>now playing</button>
+                </div>
 
-            <select onChange={handleSort} defaultValue={""}>
-                <option value="label">--Sort--</option>
-                <option value="A-Z">A-Z</option>
-                <option value="Z-A">Z-A</option>
-                <option value="recent">recent - oldest</option>
-                <option value="oldest">oldest - recent</option>
-                <option value="most-votes">most votes - least vote</option>
-                <option value="least-votes">least vote - most votes</option>
-            </select>
+                <div className="sort-selector">
+                    <select onChange={handleSort} defaultValue={""}>
+                        <option value="label">--Sort--</option>
+                        <option value="A-Z">A-Z</option>
+                        <option value="Z-A">Z-A</option>
+                        <option value="recent">recent - oldest</option>
+                        <option value="oldest">oldest - recent</option>
+                        <option value="most-votes">most votes - least vote</option>
+                        <option value="least-votes">least vote - most votes</option>
+                    </select>
+                </div>
+            </header>
 
             <div className='movie-list'>
                 {
                     showSearch ? renderMovies(sortMovies(searchMovies, sort)) : renderMovies(sortMovies(nowPlayingMovies, sort))
                 }
-                <button onClick={loadMoreMovies} disabled={isDisabled}>load more</button>
             </div>
-        </>
+            <div className="load-more-container">
+                <button className="load-more-btn" onClick={loadMoreMovies} disabled={isDisabled}>load more</button>
+            </div>
+        </main>
     )
 }
 
