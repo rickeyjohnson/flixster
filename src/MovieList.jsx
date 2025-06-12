@@ -133,7 +133,8 @@ const MovieList = ({ color }) => {
     return (
         <main>
             <nav>
-                <div onClick={() => setShowSidebar(!showSidebar)} className="sidebar-toggle">=</div>
+                <div onClick={() => setShowSidebar(!showSidebar)} className="material-symbols-outlined sidebar-toggle">menu</div>
+
                 <div className="search">
                     <input type='text' placeholder='Search' value={searchQuery} onChange={handleSearchChange}/>
                     <button className="search-btn" onClick={handleSearch}>search</button>

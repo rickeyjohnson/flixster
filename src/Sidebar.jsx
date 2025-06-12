@@ -25,7 +25,7 @@ const Sidebar = ({color, favorites, watched}) => {
                 <h2>Favorites 🌟</h2>
 
                 <div className='favorites-list'>
-                    {favorites.length > 0 ? <ul>{displayMovies(favorites)}</ul> : <p>No favorites here to see</p>}
+                    {favorites.length > 0 ? <ul>{displayMovies(favorites)}</ul> : <p>No favorites to see here</p>}
                 </div>
 
                 <h2>Watched 🍿</h2>
