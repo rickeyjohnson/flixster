@@ -5,6 +5,12 @@ import './MovieCard.css'
 const MovieCard = ({ movie, onFavoritesClick, isFavorited, onWatchedClick, wasWatched }) => {
     const [openModal, setOpenModal] = useState(false)
 
+    const toggleModal = (event) => {
+        if (event.target.classList.contains('close')) {
+            setOpenModal(false)
+        }
+    }
+
     return (
         <>
             <div className='movie-card'>
@@ -32,7 +38,7 @@ const MovieCard = ({ movie, onFavoritesClick, isFavorited, onWatchedClick, wasWa
                     </button>
                 </div>
             </div>
-            {openModal && <Modal onClick={() => setOpenModal(false)} movie={movie}/>}
+            {openModal && <Modal onClick={(event) => toggleModal(event)} movie={movie}/>}
         </>
     )
 }

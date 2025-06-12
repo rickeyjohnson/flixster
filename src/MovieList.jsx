@@ -57,8 +57,9 @@ const MovieList = ({ color }) => {
         setSearchMovies(data)
     }
 
-    const loadMoreMovies = () => {
+    const loadMoreMovies = (event) => {
         fetchNowPlaying(nowPlayingPage)
+        event.preventDefault();
     }
 
     const renderMovies = (movies) => {

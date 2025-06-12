@@ -59,9 +59,9 @@ const Modal = ({ movie, onClick }) => {
     }, [])
 
     return (
-        <div className="modal-overlay">
+        <div onClick={onClick} className="modal-overlay close">
             <div className="modal-content" >
-                <span onClick={onClick} className="close-btn material-symbols-outlined">close</span>
+                <span onClick={onClick} className="close-btn material-symbols-outlined close">close</span>
                 <h2>{movie.title}</h2>
 
                 <div className="images">
@@ -81,7 +81,7 @@ const Modal = ({ movie, onClick }) => {
                 <div className="trailers">
                     {
                         trailers.map(trailer => {
-                            return <iframe width="560" height="315" src={`https://www.youtube.com/embed/${trailer.key}?si=PqKJR2n0SVGHX-ow`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            return <iframe width="560" height="315" src={`https://www.youtube.com/embed/${trailers[0].key}?si=PqKJR2n0SVGHX-ow`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         })
                     }
                 </div>
