@@ -53,6 +53,10 @@ const Modal = ({ movie, onClick }) => {
         return date.toDateString()
     }
 
+    const handleImgLoadingError = (event) => {
+        event.target.src = './public/movie-poster-placeholder.png'
+    }
+
     useEffect(() => {
         fetchGenreName(movie.genre_ids)
         fetchTrailer(movie.id)
@@ -65,8 +69,8 @@ const Modal = ({ movie, onClick }) => {
                 <h2>{movie.title}</h2>
 
                 <div className="images">
-                    <img src={`https://image.tmdb.org/t/p/w500${movie.image_url}`} alt='poster' />
-                    <img src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt='poster' />
+                    <img src={`https://image.tmdb.org/t/p/w500${movie.image_url}`} alt='poster' onError={(event) => handleImgLoadingError(event)}/>
+                    <img src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt='poster' onError={(event) => handleImgLoadingError(event)}/>
                 </div>
     
                 <p><strong>Release Date: </strong>{printDate()}</p>

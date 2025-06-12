@@ -11,6 +11,10 @@ const MovieCard = ({ movie, onFavoritesClick, isFavorited, onWatchedClick, wasWa
         }
     }
 
+    const handleImgLoadingError = (event) => {
+        event.target.src = './public/movie-poster-placeholder.png'
+    }
+
     return (
         <>
             <div className='movie-card'>
@@ -20,7 +24,8 @@ const MovieCard = ({ movie, onFavoritesClick, isFavorited, onWatchedClick, wasWa
                     <img 
                     className='movie-poster' 
                     src={`https://image.tmdb.org/t/p/w500${movie.image_url}`} 
-                    alt='poster' 
+                    alt='poster'
+                    onError={(event) => handleImgLoadingError(event)} 
                     />
                     
                     <div className='movie-info'>
