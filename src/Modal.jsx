@@ -4,6 +4,10 @@ import './Modal.css'
 const Modal = ({ movie, onClick }) => {
     const [genres, setGenres] = useState([])
 
+    // const style = {
+    //     'background-image': `url(https://image.tmdb.org/t/p/w500${movie.backdrop_path})`
+    // }
+
     const fetchGenreName = async (genre_ids) => {
         let genreNames = []
         let genresDict = {}
@@ -31,26 +35,35 @@ const Modal = ({ movie, onClick }) => {
         setGenres(genreNames)
     }
 
+    const printDate = () => {
+        const date = new Date(movie.release_date)
+        return date.toDateString()
+    }
+
     useEffect(() => {
         fetchGenreName(movie.genre_ids)
     }, [])
 
     return (
         <div className="modal-overlay">
-            <div className="modal-content">
+            <div className="modal-content" >
+                <span onClick={onClick} class="close-btn material-symbols-outlined">close</span>
                 <h2>{movie.title}</h2>
-                <img src={`https://image.tmdb.org/t/p/w500${movie.image_url}`} alt='poster' />
-                <img src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt='poster' />
-                <p><strong>Release Date: {movie.release_date}</strong></p>
-                <p><strong>Overview: {movie.overview}</strong></p>
+
+                <div className="images">
+                    <img src={`https://image.tmdb.org/t/p/w500${movie.image_url}`} alt='poster' />
+                    <img src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt='poster' />
+                </div>
+    
+                <p><strong>Release Date: </strong>{printDate()}</p>
+                <p><strong>Overview: </strong>{movie.overview}</p>
                 <p><strong>Genres:</strong> 
                     {
                         genres.map(genre => {
-                            return `${genre}, ` 
+                            return ` ${genre}, ` 
                         })
                     }
                 </p>
-                <button onClick={onClick}>close</button>
             </div>
         </div>
     )

@@ -42,6 +42,7 @@ header {
 
 .now-playing-btn {
     margin-left: 2rem;
+    border: none;
 }
 
 .sort-selector {
