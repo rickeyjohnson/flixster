@@ -100,7 +100,14 @@ Deployed Application: [Flixster Deployed Site](https://flixster-byyv.onrender.co
 
 ### Walkthrough Video
 
-<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/407497805f3e4b428de9bb9a81b940d9?sid=759b1bf1-7b99-4416-85f8-353b88584120" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div>
+    <a href="https://www.loom.com/share/407497805f3e4b428de9bb9a81b940d9">
+      <p>Videos | Library | Loom - 13 June 2025 - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/407497805f3e4b428de9bb9a81b940d9">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/407497805f3e4b428de9bb9a81b940d9-9e4892d6ced5d67c-full-play.gif">
+    </a>
+</div>
 
 ### Reflection
 
