@@ -2,7 +2,7 @@
 
 Submitted by: **Rickey D Johnson Jr**
 
-Estimated time spent: **24** hours spent in total
+Estimated time spent: **40** hours spent in total
 
 Deployed Application: [Flixster Deployed Site](https://flixster-byyv.onrender.com)
 
