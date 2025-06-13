@@ -71,6 +71,7 @@ section {
 .now-playing-btn {
 	margin-left: 2rem;
 	border: none;
+	padding: 1rem;
 }
 
 .sort-selector {

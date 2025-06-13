@@ -117,6 +117,7 @@ const MovieList = ({ color }) => {
 	}
 
 	const handleNowPlaying = () => {
+		setSearchQuery('')
 		setNowPlayingPage(1)
 		setNowPlayingMovies([])
 		fetchNowPlaying(1)
@@ -195,7 +196,7 @@ const MovieList = ({ color }) => {
 						className="now-playing-btn"
 						onClick={handleNowPlaying}
 					>
-						now playing
+						clear
 					</button>
 				</div>
 
@@ -220,6 +221,7 @@ const MovieList = ({ color }) => {
 						watched={watched}
 						onFavoritesClick={handleFavoriteClick}
 						onWatchedClick={handleWatchedClick}
+						onHomeClick={handleNowPlaying}
 					/>
 				)}
 				<div
