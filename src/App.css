@@ -1,61 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .App {
-  font-family: 'Space Mono', monospace;
-  background-color: black;
+	font-family: 'Space Mono', monospace;
+	background-color: black;
 }
 
 .App-header {
-  background-color: #282c34;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  color: white;
-  padding: 20px;
+	background-color: #282c34;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+	color: white;
+	padding: 20px;
 }
 
 footer {
-  text-align: center;
-  height: 3vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  padding: 2rem;
-  color: black;
+	text-align: center;
+	height: 3vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	padding: 2rem;
+	color: black;
 }
 
 header {
-    margin: 0;
-    padding: 0;
-    background-color: #18191c;
+	margin: 0;
+	padding: 0;
+	background-color: #18191c;
 
-    p {
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      font-weight: bold;
-      font-size: 150px;
-      color: white;
-    }
+	p {
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		font-weight: bold;
+		font-size: 150px;
+		color: white;
+	}
 }
 
 @media (max-width: 600px) {
-  .movie-card {
-    width: 100%;
-  }
+	.movie-card {
+		width: 100%;
+	}
 
-  .search-bar {
-    flex-direction: column;
-    gap: 10px;
-  }
+	.search-bar {
+		flex-direction: column;
+		gap: 10px;
+	}
 
-  .search-bar form {
-    flex-direction: column;
-  }
+	.search-bar form {
+		flex-direction: column;
+	}
 }
