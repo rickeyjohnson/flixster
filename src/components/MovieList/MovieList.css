@@ -9,6 +9,7 @@ nav {
 		border-radius: 0;
 		border: 2px solid #23262d;
 		font-family: 'Space Mono', monospace;
+		margin-right: 0.5rem;
 	}
 
 	button {

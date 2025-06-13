@@ -1,13 +1,6 @@
 import './Sidebar.css'
 
-const Sidebar = ({
-	color,
-	favorites,
-	watched,
-	onFavoritesClick,
-	onWatchedClick,
-	onHomeClick,
-}) => {
+const Sidebar = ({ color, onFavoritesClick, onWatchedClick, onHomeClick }) => {
 	const style = {
 		'background-color': `${color}45`,
 	}

@@ -29,12 +29,12 @@
 }
 
 .sidebar-btn {
-	background-color: rgba(217, 217, 217, 0.1);
+	background-color: rgba(166, 166, 166, 0.286);
 	padding: 1rem 2rem;
 	border-radius: 1rem;
 }
 
 .sidebar-btn:hover {
 	cursor: pointer;
-	background-color: rgba(227, 227, 227, 0.33);
+	background-color: rgba(227, 227, 227, 0.498);
 }
