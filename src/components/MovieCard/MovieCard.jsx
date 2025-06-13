@@ -18,7 +18,7 @@ const MovieCard = ({
 	}
 
 	const handleImgLoadingError = (event) => {
-		event.target.src = '/public/movie-poster-placeholder.png'
+		event.target.src = '../../public/movie-poster-placeholder.png'
 	}
 
 	return (
