@@ -18,7 +18,7 @@ const MovieCard = ({
 	}
 
 	const handleImgLoadingError = (event) => {
-		event.target.src = '../../public/movie-poster-placeholder.png'
+		event.target.src = 'https://www.advancescreenings.com/img/timthumb.php?src=/img/posters/p/passenger.jpg&h=318&w=215&q=100'
 	}
 
 	return (
