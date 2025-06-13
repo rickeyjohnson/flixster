@@ -6,7 +6,7 @@ const Sidebar = ({
 	watched,
 	onFavoritesClick,
 	onWatchedClick,
-	onHomeClick
+	onHomeClick,
 }) => {
 	const style = {
 		'background-color': `${color}45`,
@@ -27,10 +27,7 @@ const Sidebar = ({
 			<div className="sidebar-content" style={style}>
 				<h1>WOAH WHAT AN AMAZING SIDEBAR!</h1>
 
-				<h2
-					onClick={onHomeClick}
-					className="home-side-btn sidebar-btn"
-				>
+				<h2 onClick={onHomeClick} className="home-side-btn sidebar-btn">
 					Home 🏠
 				</h2>
 
