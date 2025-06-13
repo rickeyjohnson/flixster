@@ -100,9 +100,7 @@ Deployed Application: [Flixster Deployed Site](https://flixster-byyv.onrender.co
 
 ### Walkthrough Video
 
-<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/share/407497805f3e4b428de9bb9a81b940d9?t=8&sid=efe9899f-164e-4894-9719-8b2d5b097c28" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-
-<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/407497805f3e4b428de9bb9a81b940d9?sid=75849e82-9c60-4f1b-a325-1815642ac5cd" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/407497805f3e4b428de9bb9a81b940d9?sid=759b1bf1-7b99-4416-85f8-353b88584120" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ### Reflection
 
