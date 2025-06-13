@@ -29,6 +29,10 @@ nav {
 		width: 10vw;
 	}
 
+	form {
+		display: flex;
+	}
+
 	input,
 	button,
 	select {

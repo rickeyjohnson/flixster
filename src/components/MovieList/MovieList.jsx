@@ -104,7 +104,8 @@ const MovieList = ({ color }) => {
 		setSearchQuery(event.target.value)
 	}
 
-	const handleSearch = () => {
+	const handleSearch = (event) => {
+		event.preventDefault()
 		if (!searchQuery) {
 			return
 		}
@@ -183,18 +184,21 @@ const MovieList = ({ color }) => {
 				</div>
 
 				<div className="search">
-					<input
-						type="text"
-						placeholder="Search"
-						value={searchQuery}
-						onChange={handleSearchChange}
-					/>
-					<button
-						className="search-btn banner-btn"
-						onClick={handleSearch}
-					>
-						search
-					</button>
+					<form onSubmit={handleSearch}>
+						<input
+							type="text"
+							placeholder="Search"
+							value={searchQuery}
+							onChange={handleSearchChange}
+						/>
+						<button
+							type="submit"
+							className="search-btn banner-btn"
+							onClick={handleSearch}
+						>
+							search
+						</button>
+					</form>
 					<button
 						className="now-playing-btn banner-btn"
 						onClick={handleNowPlaying}
