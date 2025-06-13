@@ -1,5 +1,6 @@
 .sidebar {
 	margin-left: 2rem;
+	display: fixed;
 }
 
 .sidebar-content {

@@ -232,12 +232,7 @@ const MovieList = ({ color }) => {
 						showSidebar ? 'sidebar-displayed' : ''
 					}`}
 				>
-					{
-						/* {showSearch
-						? renderMovies(sortMovies(searchMovies, sort))
-						: renderMovies(sortMovies(nowPlayingMovies, sort))} */
-						renderPage()
-					}
+					{renderPage()}
 				</div>
 			</section>
 
