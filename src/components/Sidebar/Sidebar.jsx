@@ -1,6 +1,6 @@
 import './Sidebar.css'
 
-const Sidebar = ({ color, favorites, watched }) => {
+const Sidebar = ({ color, favorites, watched, onFavoritesClick, onWatchedClick }) => {
 	const style = {
 		'background-color': `${color}45`,
 	}
@@ -20,24 +20,10 @@ const Sidebar = ({ color, favorites, watched }) => {
 			<div className="sidebar-content" style={style}>
 				<h1>WOAH WHAT AN AMAZING SIDEBAR!</h1>
 
-				<h2>Favorites 🌟</h2>
-
-				<div className="favorites-list">
-					{favorites.length > 0 ? (
-						<ul>{displayMovies(favorites)}</ul>
-					) : (
-						<p>No favorites to see here</p>
-					)}
-				</div>
-
-				<h2>Watched 🍿</h2>
-				<div className="watched-list">
-					{watched.length > 0 ? (
-						displayMovies(watched)
-					) : (
-						<p>Go watch some movies</p>
-					)}
-				</div>
+				<h2 onClick={onFavoritesClick} className='favorite-sidebar-btn sidebar-btn'>Favorites 🌟</h2>
+				
+				<h2 onClick={onWatchedClick} className='watched-sidebar-btn sidebar-btn'>Watched 🍿</h2>
+				
 			</div>
 		</div>
 	)

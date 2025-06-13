@@ -22,12 +22,14 @@ nav {
 
 section {
 	display: grid;
-	grid-template-columns: 1.25fr 5fr;
+	grid-template-columns: 1.55fr 5fr;
+	overflow: hidden;
 }
 
 .movie-list {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, 20rem);
+	grid-template-columns: repeat(auto-fit, 17rem);
+	/* grid-template-rows: repeat(auto-fit, 33rem); */
 	flex-wrap: wrap;
 	gap: 20px;
 	justify-content: center;
@@ -59,7 +61,7 @@ section {
 }
 
 .disabled {
-	background-color: red;
+	display: none;
 }
 
 .search-btn {

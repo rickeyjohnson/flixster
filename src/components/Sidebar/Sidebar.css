@@ -19,11 +19,22 @@
 	}
 
 	h2 {
-		font-size: 2rem;
+		font-size: 1.8rem;
 		text-decoration: underline;
 	}
 
 	li {
 		margin-bottom: 1rem;
 	}
+}
+
+.sidebar-btn {
+	background-color: rgba(217, 217, 217, 0.1);
+	padding: 1rem 2rem;
+	border-radius: 1rem;
+}
+
+.sidebar-btn:hover {
+	cursor: pointer;
+	background-color: rgba(129, 129, 129, 0.33);
 }

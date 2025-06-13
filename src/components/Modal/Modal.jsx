@@ -81,49 +81,53 @@ const Modal = ({ movie, onClick }) => {
 				>
 					close
 				</span>
-				<h2>{movie.title}</h2>
+				<div className='modal-information'>
+					<h2>{movie.title}</h2>
 
-				<div className="images">
-					<img
-						src={`https://image.tmdb.org/t/p/w500${movie.image_url}`}
-						alt="poster"
-						onError={(event) => handleImgLoadingError(event)}
-					/>
-					<img
-						src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-						alt="poster"
-						onError={(event) => handleImgLoadingError(event)}
-					/>
-				</div>
+					<div className="images">
+						<img
+							src={`https://image.tmdb.org/t/p/w500${movie.image_url}`}
+							alt="poster"
+							onError={(event) => handleImgLoadingError(event)}
+						/>
+						<img
+							src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+							alt="poster"
+							onError={(event) => handleImgLoadingError(event)}
+						/>
+					</div>
 
-				<p>
-					<strong>Release Date: </strong>
-					{printDate()}
-				</p>
-				<p>
-					<strong>Overview: </strong>
-					{movie.overview}
-				</p>
-				<p>
-					<strong>Genres:</strong>
-					{genres.map((genre) => {
-						return ` ${genre}, `
-					})}
-				</p>
-				<div className="trailers">
-					{trailers.map((trailer) => {
-						return (
-							<iframe
-								width="560"
-								height="315"
-								src={`https://www.youtube.com/embed/${trailers[0].key}?si=PqKJR2n0SVGHX-ow`}
-								title="YouTube video player"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-								referrerPolicy="strict-origin-when-cross-origin"
-								allowFullScreen
-							></iframe>
-						)
-					})}
+					<p>
+						<strong>Release Date: </strong>
+						{printDate()}
+					</p>
+					<p>
+						<strong>Overview: </strong>
+						{movie.overview}
+					</p>
+					<p>
+						<strong>Genres:</strong>
+						{genres.map((genre) => {
+							return ` ${genre}, `
+						})}
+					</p>
+
+					<p><strong>Trailer(s):</strong></p>
+					<div className="trailers">
+						{trailers.map((trailer) => {
+							return (
+								<iframe
+									width="560"
+									height="315"
+									src={`https://www.youtube.com/embed/${trailers[0].key}?si=PqKJR2n0SVGHX-ow`}
+									title="YouTube video player"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+									referrerPolicy="strict-origin-when-cross-origin"
+									allowFullScreen
+								></iframe>
+							)
+						})}
+					</div>
 				</div>
 			</div>
 		</div>

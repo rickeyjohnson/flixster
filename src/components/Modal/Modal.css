@@ -26,12 +26,17 @@
 	margin: 0;
 	padding: 4rem;
 	cursor: default;
+	overflow: scroll;
 
 	h2 {
 		font-size: 3vw;
 		margin: 0;
 		padding: 0;
 	}
+}
+
+.modal-information {
+	overflow: scroll;
 }
 
 .close-btn {
@@ -68,5 +73,5 @@
 	justify-content: center;
 	gap: 2rem;
 	flex-wrap: wrap;
-	overflow: scroll;
+	height: 4rem;
 }

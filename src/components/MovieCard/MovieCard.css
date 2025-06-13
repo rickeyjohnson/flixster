@@ -9,7 +9,7 @@
 
 	img {
 		width: 100%;
-		padding: 0.5rem;
+		padding: 0.5rem 0.5rem 0rem 0.5rem;
 		border-radius: 1rem;
 	}
 
@@ -77,11 +77,25 @@
 	border: none;
 	border-radius: 1.5rem;
 	font-family: 'Space Mono', monospace;
+	background-color: rgba(0, 0, 0, 0.475);
+
+	&:hover {
+		background-color: rgba(97, 97, 97, 0.644);
+	}
 }
 
 .watch-btn-container {
 	display: flex;
 	justify-content: center;
-	margin-top: 2rem;
-	margin-bottom: 1rem;
+	position: absolute;
+	top: 63%;
+	right: 1rem;
+	/* margin-top: 2rem;
+	margin-bottom: 1rem; */
+}
+
+.absolute {
+	position: absolute;
+	right: 1rem;
+	background-color: rgba(0, 0, 0, 0.475);
 }

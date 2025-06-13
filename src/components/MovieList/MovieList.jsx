@@ -3,6 +3,7 @@ import { parseMovieData, sortMovies } from '../../utils/utils'
 import MovieCard from '../MovieCard/MovieCard'
 import './MovieList.css'
 import Sidebar from '../Sidebar/Sidebar'
+import { render } from 'react-dom'
 
 const MovieList = ({ color }) => {
 	const [sort, setSort] = useState('')
@@ -12,6 +13,8 @@ const MovieList = ({ color }) => {
 	const [isDisabled, setIsDisabled] = useState(false)
 	const [searchQuery, setSearchQuery] = useState('')
 	const [showSearch, setShowSearch] = useState(false)
+	const [showFavorites, setShowFavorites] = useState(false)
+	const [showWatched, setShowWatched] = useState(false)
 	const [favorites, setFavorites] = useState([])
 	const [watched, setWatched] = useState([])
 	const [showSidebar, setShowSidebar] = useState(false)
@@ -67,6 +70,26 @@ const MovieList = ({ color }) => {
 		event.preventDefault()
 	}
 
+	const loadFavoriteMovies = () => {
+		renderMovies(favorites)
+	}
+
+	const loadWatchedMovies = () => {
+		renderMovies(watched)
+	}
+
+	const renderPage = () => {
+		if (showSearch) {
+			return renderMovies(sortMovies(searchMovies, sort))
+		} else if (showFavorites) {
+			return renderMovies(sortMovies(favorites, sort))
+		} else if (showWatched) {
+			return renderMovies(sortMovies(watched, sort))
+		} else {
+			return renderMovies(sortMovies(nowPlayingMovies, sort))
+		}
+	}
+
 	const renderMovies = (movies) => {
 		return (
 			<>
@@ -95,6 +118,8 @@ const MovieList = ({ color }) => {
 		}
 		fetchSearchMovies(searchQuery)
 		setShowSearch(true)
+		setShowFavorites(false)
+		setShowWatched(false)
 		setIsDisabled(true)
 		setSort('')
 	}
@@ -104,12 +129,13 @@ const MovieList = ({ color }) => {
 		setNowPlayingMovies([])
 		fetchNowPlaying(1)
 		setShowSearch(false)
+		setShowFavorites(false)
+		setShowWatched(false)
 		setIsDisabled(false)
 		setSort('')
 	}
 
 	const handleSort = (event) => {
-		console.log(event.target.value)
 		setSort(event.target.value)
 	}
 
@@ -131,6 +157,23 @@ const MovieList = ({ color }) => {
 		} else {
 			setWatched([...watched, movie])
 		}
+	}
+
+	const handleFavoriteClick = () => {
+		console.log('clicked!')
+		setShowFavorites(true)
+		setShowSearch(false)
+		setShowWatched(false)
+		setIsDisabled(true)
+		setSort('')
+	}
+
+	const handleWatchedClick = () => {
+		setShowFavorites(false)
+		setShowSearch(false)
+		setShowWatched(true)
+		setIsDisabled(true)
+		setSort('')
 	}
 
 	const isFavorite = (movie) => favorites.some((fav) => fav.id === movie.id)
@@ -172,10 +215,10 @@ const MovieList = ({ color }) => {
 						<option value="recent">recent - oldest</option>
 						<option value="oldest">oldest - recent</option>
 						<option value="most-votes">
-							most votes - least vote
+							highest - lowest
 						</option>
 						<option value="least-votes">
-							least vote - most votes
+							lowest - highest
 						</option>
 					</select>
 				</div>
@@ -187,6 +230,8 @@ const MovieList = ({ color }) => {
 						color={color}
 						favorites={favorites}
 						watched={watched}
+						onFavoritesClick={handleFavoriteClick}
+						onWatchedClick={handleWatchedClick}
 					/>
 				)}
 				<div
@@ -194,15 +239,17 @@ const MovieList = ({ color }) => {
 						showSidebar ? 'sidebar-displayed' : ''
 					}`}
 				>
-					{showSearch
+					{/* {showSearch
 						? renderMovies(sortMovies(searchMovies, sort))
-						: renderMovies(sortMovies(nowPlayingMovies, sort))}
+						: renderMovies(sortMovies(nowPlayingMovies, sort))} */
+						renderPage()
+					}
 				</div>
 			</section>
 
 			<div className="load-more-container">
 				<button
-					className="load-more-btn"
+					className={`load-more-btn ${isDisabled ? 'disabled' : ''}`}
 					onClick={loadMoreMovies}
 					disabled={isDisabled}
 				>
