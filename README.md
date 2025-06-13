@@ -100,33 +100,7 @@ Deployed Application: [Flixster Deployed Site](https://flixster-byyv.onrender.co
 
 ### Walkthrough Video
 
-<div>
-    <a href="https://www.loom.com/share/407497805f3e4b428de9bb9a81b940d9">
-      <p>Flixster</p>
-    </a>
-    <a href="https://www.loom.com/share/407497805f3e4b428de9bb9a81b940d9">
-      <img style="width:80%;" src="https://cdn.loom.com/sessions/thumbnails/407497805f3e4b428de9bb9a81b940d9-2d817d5a8b6337b7-full-play.gif">
-    </a>
-</div>
-<div>
-    <a href="https://www.loom.com/share/407497805f3e4b428de9bb9a81b940d9">
-      <p>Videos | Library | Loom - 13 June 2025 - Watch Video</p>
-    </a>
-    <a href="https://www.loom.com/share/407497805f3e4b428de9bb9a81b940d9">
-      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/407497805f3e4b428de9bb9a81b940d9-2d817d5a8b6337b7-full-play.gif">
-    </a>
-  </div>
-
-  <div>
-    <a href="https://www.loom.com/share/407497805f3e4b428de9bb9a81b940d9">
-      <p>Videos | Library | Loom - 13 June 2025 - Watch Video</p>
-    </a>
-    <a href="https://www.loom.com/share/407497805f3e4b428de9bb9a81b940d9">
-      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/407497805f3e4b428de9bb9a81b940d9-2d817d5a8b6337b7-full-play.gif">
-    </a>
-  </div>
-
-  <div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/share/407497805f3e4b428de9bb9a81b940d9?sid=8eed99d6-dd56-4838-9cf5-6e1614a49afd" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/407497805f3e4b428de9bb9a81b940d9?sid=d4213b89-45df-4168-a6c5-49d5e594e4cc" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ### Reflection
 
