@@ -81,7 +81,7 @@ const Modal = ({ movie, onClick }) => {
 				>
 					close
 				</span>
-				<div className='modal-information'>
+				<div className="modal-information">
 					<h2>{movie.title}</h2>
 
 					<div className="images">
@@ -112,7 +112,9 @@ const Modal = ({ movie, onClick }) => {
 						})}
 					</p>
 
-					<p><strong>Trailer(s):</strong></p>
+					<p>
+						<strong>Trailer(s):</strong>
+					</p>
 					<div className="trailers">
 						{trailers.map((trailer) => {
 							return (

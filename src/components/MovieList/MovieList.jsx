@@ -70,14 +70,6 @@ const MovieList = ({ color }) => {
 		event.preventDefault()
 	}
 
-	const loadFavoriteMovies = () => {
-		renderMovies(favorites)
-	}
-
-	const loadWatchedMovies = () => {
-		renderMovies(watched)
-	}
-
 	const renderPage = () => {
 		if (showSearch) {
 			return renderMovies(sortMovies(searchMovies, sort))
@@ -214,12 +206,8 @@ const MovieList = ({ color }) => {
 						<option value="Z-A">Z-A</option>
 						<option value="recent">recent - oldest</option>
 						<option value="oldest">oldest - recent</option>
-						<option value="most-votes">
-							highest - lowest
-						</option>
-						<option value="least-votes">
-							lowest - highest
-						</option>
+						<option value="most-votes">highest - lowest</option>
+						<option value="least-votes">lowest - highest</option>
 					</select>
 				</div>
 			</nav>
@@ -239,7 +227,8 @@ const MovieList = ({ color }) => {
 						showSidebar ? 'sidebar-displayed' : ''
 					}`}
 				>
-					{/* {showSearch
+					{
+						/* {showSearch
 						? renderMovies(sortMovies(searchMovies, sort))
 						: renderMovies(sortMovies(nowPlayingMovies, sort))} */
 						renderPage()

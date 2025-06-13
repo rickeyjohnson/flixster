@@ -29,7 +29,6 @@ section {
 .movie-list {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, 17rem);
-	/* grid-template-rows: repeat(auto-fit, 33rem); */
 	flex-wrap: wrap;
 	gap: 20px;
 	justify-content: center;
