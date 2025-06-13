@@ -4,6 +4,7 @@ import './Modal.css'
 const Modal = ({ movie, onClick }) => {
 	const [genres, setGenres] = useState([])
 	const [trailers, setTrailers] = useState([])
+	const [runtime, setRuntime] = useState(0)
 
 	const fetchGenreName = async (genre_ids) => {
 		const genreNames = []
@@ -58,6 +59,25 @@ const Modal = ({ movie, onClick }) => {
 		setTrailers(trailers)
 	}
 
+	const fetchRuntime = async (id) => {
+		const options = {
+			method: 'GET',
+			headers: {
+				accept: 'application/json',
+				Authorization:
+					'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlZTJhNGI5ZDFlODAzYjI4MTRkYjRkNTY1NmMwMzQzYyIsIm5iZiI6MTc0OTUwNTIzMi4zNDQsInN1YiI6IjY4NDc1NGQwNzg5ZWY1MTA5MzFlYWQwOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.BMZp9EdAO53TTVNUtT06TtxGQmI_22hJWc7luUKDU1s',
+			},
+		}
+
+		const response = await fetch(
+			`https://api.themoviedb.org/3/movie/${id}?language=en-US`,
+			options
+		)
+		const result = await response.json()
+		const runtime = result.runtime
+		setRuntime(runtime)
+	}
+
 	const printDate = () => {
 		const date = new Date(movie.release_date)
 		return date.toDateString()
@@ -70,6 +90,7 @@ const Modal = ({ movie, onClick }) => {
 	useEffect(() => {
 		fetchGenreName(movie.genre_ids)
 		fetchTrailer(movie.id)
+		fetchRuntime(movie.id)
 	}, [])
 
 	return (
@@ -101,6 +122,12 @@ const Modal = ({ movie, onClick }) => {
 						<strong>Release Date: </strong>
 						{printDate()}
 					</p>
+
+					<p>
+						<strong>Runtime: </strong>
+						{runtime} minutes
+					</p>
+
 					<p>
 						<strong>Overview: </strong>
 						{movie.overview}
