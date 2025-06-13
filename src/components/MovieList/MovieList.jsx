@@ -189,11 +189,11 @@ const MovieList = ({ color }) => {
 						value={searchQuery}
 						onChange={handleSearchChange}
 					/>
-					<button className="search-btn" onClick={handleSearch}>
+					<button className="search-btn banner-btn" onClick={handleSearch}>
 						search
 					</button>
 					<button
-						className="now-playing-btn"
+						className="now-playing-btn banner-btn"
 						onClick={handleNowPlaying}
 					>
 						clear

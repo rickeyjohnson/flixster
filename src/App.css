@@ -7,6 +7,10 @@
 .App {
 	font-family: 'Space Mono', monospace;
 	background-color: black;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	justify-content: flex-start;
 }
 
 .App-header {
@@ -28,6 +32,9 @@ footer {
 	background-color: white;
 	padding: 2rem;
 	color: black;
+	align-self: end;
+	margin-top: auto;
+	min-width: 100vw;
 }
 
 header {
